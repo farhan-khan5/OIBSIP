@@ -18,6 +18,34 @@ body {
     padding: 0 20px;
 }
 
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff5733;
+}
+
 /* Header Styles */
 header {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('car-bg.jpg') no-repeat center center/cover;
@@ -25,6 +53,7 @@ header {
     padding: 100px 0;
     text-align: center;
     position: relative;
+    animation: fadeIn 2s ease-in-out;
 }
 
 header::after {
@@ -38,6 +67,7 @@ header::after {
     height: 5px;
     background: #ff5733;
     border-radius: 5px;
+    animation: slideIn 1s ease-in-out;
 }
 
 header .container {
@@ -48,11 +78,13 @@ header .container {
 header h1 {
     font-size: 3.5em;
     margin-bottom: 20px;
+    animation: slideDown 1s ease-in-out;
 }
 
 header p {
     font-size: 1.2em;
     margin-bottom: 30px;
+    animation: slideDown 1s ease-in-out 0.2s;
 }
 
 .cta-button {
@@ -62,11 +94,13 @@ header p {
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2em;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: bounce 2s infinite;
 }
 
 .cta-button:hover {
     background: #c13c23;
+    transform: scale(1.1);
 }
 
 /* Features Section */
@@ -74,12 +108,14 @@ header p {
     padding: 80px 0;
     background: #fff;
     text-align: center;
+    animation: fadeIn 2s ease-in-out;
 }
 
 #features h2 {
     font-size: 2.5em;
     margin-bottom: 40px;
     color: #ff5733;
+    animation: slideDown 1s ease-in-out;
 }
 
 #features .container {
@@ -96,6 +132,7 @@ header p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 300px;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .feature:hover {
@@ -106,16 +143,19 @@ header p {
 .feature img {
     max-width: 100px;
     margin-bottom: 15px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .feature h3 {
     margin: 10px 0;
     font-size: 1.8em;
     color: #ff5733;
+    animation: fadeInUp 1s ease-in-out 0.2s;
 }
 
 .feature p {
     color: #666;
+    animation: fadeInUp 1s ease-in-out 0.4s;
 }
 
 /* Footer Styles */
@@ -130,6 +170,58 @@ footer .container {
     max-width: 800px;
     margin: auto;
 }
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 
 
