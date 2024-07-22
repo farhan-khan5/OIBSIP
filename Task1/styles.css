@@ -14,7 +14,7 @@ body {
 
 /* Header Styles */
 header {
-    background: url('header-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('header-bg.jpg') no-repeat center center/cover;
     color: #fff;
     padding: 120px 0;
     text-align: center;
@@ -29,11 +29,13 @@ header .container {
 header h1 {
     font-size: 3em;
     margin-bottom: 20px;
+    color: #ffdd59;
 }
 
 header p {
     font-size: 1.2em;
     margin-bottom: 30px;
+    color: #ffdd59;
 }
 
 .cta-button {
@@ -105,4 +107,5 @@ footer .container {
     max-width: 800px;
     margin: auto;
 }
+
 
