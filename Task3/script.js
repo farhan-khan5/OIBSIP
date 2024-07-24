@@ -2,6 +2,11 @@ document.getElementById('convertButton').addEventListener('click', function() {
     let inputTemperature = parseFloat(document.getElementById('inputTemperature').value);
     let inputUnit = document.getElementById('inputUnit').value;
 
+    if (isNaN(inputTemperature)) {
+        alert("Please enter a valid temperature");
+        return;
+    }
+
     let celsius, fahrenheit, kelvin;
 
     if (inputUnit === 'Celsius') {
@@ -18,8 +23,16 @@ document.getElementById('convertButton').addEventListener('click', function() {
         kelvin = inputTemperature;
     }
 
-    document.getElementById('celsiusResult').innerText = celsius.toFixed(2);
-    document.getElementById('fahrenheitResult').innerText = fahrenheit.toFixed(2);
-    document.getElementById('kelvinResult').innerText = kelvin.toFixed(2);
+    animateResult('celsiusResult', celsius.toFixed(2));
+    animateResult('fahrenheitResult', fahrenheit.toFixed(2));
+    animateResult('kelvinResult', kelvin.toFixed(2));
 });
 
+function animateResult(elementId, value) {
+    let element = document.getElementById(elementId);
+    element.style.opacity = 0;
+    setTimeout(function() {
+        element.innerText = value;
+        element.style.opacity = 1;
+    }, 300);
+}
